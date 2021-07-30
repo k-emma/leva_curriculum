@@ -11,7 +11,7 @@ class PostController extends Controller
 {
     public function index(Post $post)
     {
-        return view('index')->with(['posts' => $post->getPaginate()]);
+        return view('index')->with(['posts' => $post->getPaginateByLimit()]);
     }
     public function show(Post $post)
     {
@@ -36,5 +36,10 @@ class PostController extends Controller
         $input = $request['post'];
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
+    }
+    public function destroy(Post $post)
+    {
+        $post->delete();
+        return redirect('/');
     }
 }
