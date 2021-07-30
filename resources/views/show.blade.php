@@ -7,15 +7,13 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1 class="title">
-            {{ $post->title }}
-        </h1>
+        <h1>Blog Name</h1>
+        <p class="edit"><a href="/posts/{{ $post->id }}/edit">Edit</p>
         <div class="post">
+            <h2 class="title">{{ $post->title }}</h2>
             <p class="body">{{ $post->body }}</p>
             <p class="updated_at">{{ $post->updated_at }}</p>
         </div>
-        <div class="footer">
-            <a href="/">Back</a>
-        </div>
+        <div class="back"><a href="/">Back</a></div>
     </body>
 </html>
