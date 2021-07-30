@@ -1,4 +1,4 @@
-<!DOVTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-' , app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -13,11 +13,9 @@
             <div class='post'>
                 <h2><a href='/posts/{{ $post->id }}'>{{ $post->title }}</a>
                 <p class='body'>{{ $post->body }}</p>
-                
-                <h2><a href='/posts/{{ $post->id }}'>{{ $post->title }}</a>
-                <p class='body'>{{ $post->body }}</p>
             </div>
             @endforeach
+            <p class='create'><a href="/posts/create">blog posting</a></p>
         </div>
     </body>
 </html>
